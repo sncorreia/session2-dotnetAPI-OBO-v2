@@ -7,6 +7,7 @@ builder.Services
     .AddMicrosoftIdentityWebApiAuthentication(builder.Configuration)
     .EnableTokenAcquisitionToCallDownstreamApi()
     .AddMicrosoftGraph(builder.Configuration.GetSection("Graph"))
+    .AddDownstreamWebApi("API2", builder.Configuration.GetSection("API2Config"))
     .AddInMemoryTokenCaches();
 
 builder.Services.AddControllers();
